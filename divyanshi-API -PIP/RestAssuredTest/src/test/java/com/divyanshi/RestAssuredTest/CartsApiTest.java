@@ -18,7 +18,7 @@ public class CartsApiTest {
 
     @Test
     public void testResponseSchema() {
-        Response response = RestAssured.get("/carts");
+        Response response = RestAssured.given().log().all().get("/carts").then().log().all().extract().response();
 
         // Log response details
         logResponse(response);
@@ -43,7 +43,7 @@ public class CartsApiTest {
 
     @Test
     public void testProductsFields() {
-        Response response = RestAssured.get("/carts");
+        Response response = RestAssured.given().log().all().get("/carts").then().log().all().extract().response();
 
         // Log response details
         logResponse(response);
