@@ -17,7 +17,7 @@ public class UserApiTest {
 
     @Test
     public void testFirstNamesPresent() {
-        Response response = RestAssured.get("/users");
+        Response response = RestAssured.given().log().all().get("/users").then().log().all().extract().response();
 
         // Print response status code
         int statusCode = response.getStatusCode();
@@ -59,7 +59,7 @@ public class UserApiTest {
 
     @Test
     public void testLatAndLongNotNull() {
-        Response response = RestAssured.get("/users");
+        Response response = RestAssured.given().log().all().get("/users").then().log().all().extract().response();
 
         // Print response status code
         int statusCode = response.getStatusCode();
@@ -97,7 +97,7 @@ public class UserApiTest {
 
     @Test
     public void testPasswordComplexity() {
-        Response response = RestAssured.get("/users");
+        Response response = RestAssured.given().log().all().get("/users").then().log().all().extract().response();
 
         // Print response status code
         int statusCode = response.getStatusCode();
