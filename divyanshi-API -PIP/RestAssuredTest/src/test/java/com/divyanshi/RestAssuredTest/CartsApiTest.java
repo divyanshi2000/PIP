@@ -75,5 +75,6 @@ public class CartsApiTest {
     private void logResponse(Response response) {
         System.out.println("Response Status Code: " + response.getStatusCode());
 //        System.out.println("Response Body: " + response.getBody().asString());
+        System.out.println("Response Content type: " + response.getContentType());
     }
 }
