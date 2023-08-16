@@ -16,7 +16,7 @@ public class ProductAPITest {
 
     @Test
     public void testGetProducts() {
-        Response response = RestAssured.get("/products");
+        Response response = RestAssured.given().log().all().get("/products").then().log().all().extract().response();
 
         // Print response status code
         int statusCode = response.getStatusCode();
@@ -46,7 +46,7 @@ public class ProductAPITest {
 
     @Test
     public void testUniqueIds() {
-        Response response = RestAssured.get("/products");
+        Response response = RestAssured.given().log().all().get("/products").then().log().all().extract().response();
 
         // Print response status code
         int statusCode = response.getStatusCode();
